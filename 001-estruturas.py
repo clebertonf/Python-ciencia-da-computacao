@@ -102,3 +102,19 @@ print(info)
 
 # ====== Range (range) ======
 
+# Estrutura capaz de gerar uma sequência numérica de um valor inicial até um valor final,
+#  modificando seu valor de acordo com o passo ( step ) definido. Pode ser declarado como
+#  range( [start], stop[, step] ) , em que start e step podem ser omitidos, possuindo valores 
+# iniciais iguais a 0 e 1 respectivamente.
+
+# range = list(range(5))
+# print(range)
+
+range2 = list(range(1, 10)) # lista 1 a 10
+print(range2)
+
+range3 = list(range(1, 11, 2)) # passo de 2 em 2
+print(range3)
+
+range4 = list(range(10, 0, -1)) # valores neagtivos gera lista decrecente
+print(range4)
