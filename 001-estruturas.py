@@ -83,4 +83,22 @@ del pessoas_pelo_id[2]
 
 print(pessoas_pelo_id.items()) # um conjunto é retornado com tuplas contendo chaves e valores
 
+info = {
+  "personagem": "Margarida",
+  "origem": "Pato Donald",
+  "nota": "Namorada do personagem principal nos quadrinhos do Pato Donald",
+}
+
+print(info.keys()) # array com as keys
+
+# add nova chave / valor
+info["recorrente"] = "sim"
+
+print(info)
+
+info.pop("origem")
+
+print(info)
+
+# ====== Range (range) ======
 
