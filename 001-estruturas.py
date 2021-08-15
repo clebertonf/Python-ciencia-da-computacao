@@ -70,3 +70,17 @@ permissions.difference({"user"})  # retorna a diferença entre os dois conjuntos
 
 # ====== Dicionários (dict) ======
 
+# Estrutura que associa uma chave a um determinado valor. É a representação do tão famoso objeto que utilizamos em JavaScript.
+
+pessoas_pelo_id = {1: "Cleber", 2: "Lucas"}
+pessoas_pelo_nome = {"Mario": 1, "Carlos": 2}
+
+print(pessoas_pelo_id[1])
+print(pessoas_pelo_nome["Mario"])
+
+# elementos podem ser removidos com a palavra chave del
+del pessoas_pelo_id[2]
+
+print(pessoas_pelo_id.items()) # um conjunto é retornado com tuplas contendo chaves e valores
+
+
