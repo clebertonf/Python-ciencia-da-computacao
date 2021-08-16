@@ -44,3 +44,22 @@ dict(
 )  # o número de parâmetros passados para a função pode variar
 
 print("Botaro", "Cássio", sep=", ")
+
+
+def leet(word):
+    word = list(word.upper())
+    char_map = dict(zip('AEIO', '4310'))
+    print(char_map)
+
+    results = []
+
+    for letter in word:
+        if letter in char_map:
+            results.append(char_map[letter])
+        else:
+            results.append(letter)
+
+    return results
+
+
+print(leet('cleber'))
