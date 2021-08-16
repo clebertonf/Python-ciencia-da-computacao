@@ -115,3 +115,14 @@ for rate in ratings:
 
 print(new_ratings)
 
+# Imprimir multiplos de 3 (divisiveis por 3)
+
+values = [60, 80, 50, 90, 100]
+values_mult = []
+
+for number in values:
+    if number % 2 == 0:
+        values_mult.append(number)
+
+print(values_mult)
+
