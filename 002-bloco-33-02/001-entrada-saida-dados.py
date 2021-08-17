@@ -7,16 +7,20 @@ import sys
 number = 0
 
 while number < 60:
-    number += int(input('Digite um numero'))
+    number += int(input("Digite um numero"))
 
-print('O a soma é maior que 62')
+print("O a soma é maior que 62")
 
 
-random_number = random.randint(1, 10)  # escolhe um número aleatório entre 1 e 10
+random_number = random.randint(
+    1, 10
+)  # escolhe um número aleatório entre 1 e 10
 guess = ""
 
 while guess != random_number:  # enquanto não adivinhar o número
-    guess = int(input("Qual o seu palpite? "))  # pergunte a pessoa usuária um número
+    guess = int(
+        input("Qual o seu palpite? ")
+    )  # pergunte a pessoa usuária um número
 
 print("O número sorteado era: ", guess)
 
@@ -24,7 +28,7 @@ print("O número sorteado era: ", guess)
 
 if __name__ == " __main__":
     for argument in sys.argv:
-        print('Received:', argument)
+        print("Received:", argument)
 
 # executando (python3 arquivo.py 2 4 "teste")
 
@@ -35,7 +39,9 @@ print("O resultado é", 42)  # saída: O resultado é 42
 print("Os resultado são", 6, 23, 42)  # saída: Os resultados são 6 23 42
 
 print("Maria", "João", "Miguel", "Ana")  # saída: Maria João Miguel Ana
-print("Maria", "João", "Miguel", "Ana", sep=", ")  # saída: Maria, João, Miguel, Ana
+print(
+    "Maria", "João", "Miguel", "Ana", sep=", "
+)  # saída: Maria, João, Miguel, Ana
 
 # print na mesma lina
 print("Na mesma ", end="")
@@ -49,7 +55,7 @@ import sys
 err = "Arquivo não encontrado"
 print(f"Erro aconteceu: {err}", file=sys.stderr)
 
-#  Em Python , podemos fazer interpolação de variáveis e expressões utilizando f-string . 
+#  Em Python , podemos fazer interpolação de variáveis e expressões utilizando f-string .
 # Adicionamos um f antes das aspas e o valor de saída entre chaves. Essa dica é importante,
 #  pois é a maneira mais eficiente de formatar strings.
 
@@ -68,14 +74,14 @@ print(f"{x:.^3}")  # saída: ".5."
 
 # Faça um programa que solicite o nome de uma pessoa usuária e imprima-o na vertical. Exemplo:
 
-name = input('Digite seu nome: ')
+name = input("Digite seu nome: ")
 
 for name in name:
     print(name)
 
-#  Escreva um programa que receba vários números naturais e calcule a soma desses valores. 
-# Caso algum valor da entrada seja inválido, por exemplo uma letra, uma mensagem deve ser 
-# exibida, na saída de erros, no seguinte formato: "Erro ao somar valores, {valor} é um valor 
+#  Escreva um programa que receba vários números naturais e calcule a soma desses valores.
+# Caso algum valor da entrada seja inválido, por exemplo uma letra, uma mensagem deve ser
+# exibida, na saída de erros, no seguinte formato: "Erro ao somar valores, {valor} é um valor
 # inválido". Ao final, você deve imprimir a soma dos valores válidos.
 
 
@@ -85,14 +91,14 @@ def sum_numbers():
     continues = True
 
     while continues == True:
-        numbers.append(int(input('Digite um numero: ')))
-        resp = input('Deseja digitar outro? s/n: ')
-        if resp == 's':
+        numbers.append(int(input("Digite um numero: ")))
+        resp = input("Deseja digitar outro? s/n: ")
+        if resp == "s":
             continues = True
         else:
             continues = False
 
-    print('A soma dos numeros é: ', sum(numbers))
+    print("A soma dos numeros é: ", sum(numbers))
 
 
 sum_numbers()
