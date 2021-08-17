@@ -64,4 +64,37 @@ print(f"{x:.^3}")  # saída: ".5."
 # ^ indica que o valor será centralizado
 # 3 são o número de caracteres exibidos
 
+# Exercicios
+
+# Faça um programa que solicite o nome de uma pessoa usuária e imprima-o na vertical. Exemplo:
+
+name = input('Digite seu nome: ')
+
+for name in name:
+    print(name)
+
+#  Escreva um programa que receba vários números naturais e calcule a soma desses valores. 
+# Caso algum valor da entrada seja inválido, por exemplo uma letra, uma mensagem deve ser 
+# exibida, na saída de erros, no seguinte formato: "Erro ao somar valores, {valor} é um valor 
+# inválido". Ao final, você deve imprimir a soma dos valores válidos.
+
+
+def sum_numbers():
+    numbers = []
+
+    continues = True
+
+    while continues == True:
+        numbers.append(int(input('Digite um numero: ')))
+        resp = input('Deseja digitar outro? s/n: ')
+        if resp == 's':
+            continues = True
+        else:
+            continues = False
+
+    print('A soma dos numeros é: ', sum(numbers))
+
+
+sum_numbers()
+
 # 
