@@ -96,5 +96,3 @@ def sum_numbers():
 
 
 sum_numbers()
-
-# 
