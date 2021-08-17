@@ -2,7 +2,7 @@
 # referencia para exceções já embutidas na linguagem Python
 
 
-# Observe que, apenas no exemplo abaixo, podemos observar três exceções: 
+# Observe que, apenas no exemplo abaixo, podemos observar três exceções:
 # ZeroDivisionError , NameError e TypeError
 
 """
@@ -71,7 +71,37 @@ with open("arquivo.txt", "w") as file:
 print(file.closed)
 
 
-# Já vimos a utilização de gerenciadores de contexto em testes. Lá, capturamos exceções que ocorrem 
-# e verificamos se naquele contexto a exceção lançada era a esperada. Não há um recurso a ser liberado, 
+# Já vimos a utilização de gerenciadores de contexto em testes. Lá, capturamos exceções que ocorrem
+# e verificamos se naquele contexto a exceção lançada era a esperada. Não há um recurso a ser liberado,
 # mas estamos garantindo que uma asserção será feita naquele contexto.
 
+# Exercicios
+# Dado um arquivo contendo estudantes e suas respectivas notas, escreva um programa que lê todas
+# essas informações e filtre mantendo somente as pessoas que estão reprovadas, e escreva seus
+# nomes em outro arquivo. A nota miníma para aprovação é 6.
+
+
+def filter_aprove():
+    try:
+        file = open("alunos.txt", mode='r')
+        notas = []
+        final_notas = []
+        for line in file:
+            notas.append(line.split())
+        for nota in notas:
+            if int(nota[1]) < 6:
+                final_notas.extend(nota)
+
+                file_list = open('alunos_reprovados.txt', mode='w')
+                file_list.writelines(final_notas)
+                file_list.close()
+    except OSError:
+        print("Erro, arquivo não existe")
+    else:
+        print("arquivo manipulado e fechado com sucesso")
+        file.close()
+
+
+filter_aprove()
+
+# função imcompelta falta manipular string

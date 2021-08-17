@@ -1,6 +1,23 @@
-# Criamos um contexto, limitando o escopo onde o arquivo está aberto.
-# O uso do "as" aqui é somente para atribuir o valor utilizado no contexto à variável file
-with open("arquivo.txt", "w") as file:
-    file.write("Michelle 27\n")
-# como estamos fora do contexto, o arquivo foi fechado
-print(file.closed)
+
+def filter_aprove():
+    try:
+        file = open("alunos.txt", mode='r')
+        notas = []
+        final_notas = []
+        for line in file:
+            notas.append(line.split())
+        for nota in notas:
+            if int(nota[1]) < 6:
+                final_notas.extend(nota)
+                
+                file_list = open('alunos_reprovados.txt', mode='w')
+                file_list.writelines(final_notas)
+                file_list.close()
+    except OSError:
+        print("Erro, arquivo não existe")
+    else:
+        print("arquivo manipulado e fechado com sucesso")
+        file.close()
+
+
+filter_aprove()
