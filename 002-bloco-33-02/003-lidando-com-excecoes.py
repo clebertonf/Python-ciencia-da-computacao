@@ -31,3 +31,47 @@ while True:
         print("Oops!  That was no valid number.  Try again...")
 
 # Lidando com exceções enquanto manipulamos arquivos
+
+"""
+    Sempre devemos fechar um arquivo e podemos, em um bloco try , fazer isso utilizando a instrução 
+    finally ou else . O finally é uma outra cláusula do conjunto try , cuja finalidade é permitir a 
+    implementação de ações de limpeza, que sempre devem ser executadas independentemente da ocorrência 
+    de ações. Já o else ocorre sempre que todo o try for bem sucedido.
+"""
+
+try:
+    arquivo = open("arquivo.txt", "r")
+except OSError:
+    # será executado caso haja uma exceção
+    print("arquivo inexistente")
+else:
+    # será executado se tudo ocorrer bem no try
+    print("arquivo manipulado e fechado com sucesso")
+    arquivo.close()
+finally:
+    # será sempre executado, independentemente de erro
+    print("Tentativa de abrir arquivo")
+
+"""
+O with é a palavra reservada para gerenciamento de contexto. Este gerenciamento ( with ) 
+é utilizado para encapsular a utilização de um recurso, garantindo que certas ações sejam 
+tomadas independentemente se ocorreu ou não um erro naquele contexto.
+A função open retorna um objeto que se comporta como um gerenciador de contexto de arquivo que 
+será responsável por abrir e fechar o mesmo. Isto significa que o arquivo possui mecanismos 
+especiais que, quando invocados, utilizando with , alocam um determinado recurso, no caso um 
+arquivo, e, quando o bloco for terminado, este recurso será liberado.
+
+"""
+
+# Criamos um contexto, limitando o escopo onde o arquivo está aberto.
+# O uso do "as" aqui é somente para atribuir o valor utilizado no contexto à variável file
+with open("arquivo.txt", "w") as file:
+    file.write("Michelle 27\n")
+# como estamos fora do contexto, o arquivo foi fechado
+print(file.closed)
+
+
+# Já vimos a utilização de gerenciadores de contexto em testes. Lá, capturamos exceções que ocorrem 
+# e verificamos se naquele contexto a exceção lançada era a esperada. Não há um recurso a ser liberado, 
+# mas estamos garantindo que uma asserção será feita naquele contexto.
+
