@@ -1,0 +1,16 @@
+{
+    "nomes": [
+        {
+            "nome": "Cleber",
+            "idade": 25
+        },
+        {
+            "nome": "Francisco",
+            "idade": 26
+        },
+        {
+            "nome": "Lucas",
+            "idade": 18
+        }
+    ]
+}
