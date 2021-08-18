@@ -104,4 +104,4 @@ def filter_aprove():
 
 filter_aprove()
 
-# função imcompelta falta manipular string
+# função incompelta falta manipular string
