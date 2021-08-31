@@ -36,3 +36,9 @@ class Mailer:
 meu_user = User("Valentino Trocatapa", "valentino@tinytoons.com", "Grana")
 meu_user.reset_password()
 
+"""
+Assim resolvemos o nosso problema com o máximo de lógica encapsulada. 
+E ao separarmos as nossas entidades , nós deixamos a entidade Mailer, 
+de quebra, muito mais genérica! Ela não precisa enviar só emails de 
+reset de senha agora. Ela pode enviar quaisquer emails!
+"""
