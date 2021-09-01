@@ -1,6 +1,7 @@
 #  python3 -m pip install requests
 
 import requests
+import time
 
 
 # Requisição do tipo GET
@@ -35,3 +36,21 @@ print(response.json())
 response = requests.get("http://httpbin.org/status/404")
 response.raise_for_status()
 
+
+# Rate Limit
+
+# À partir da décima requisição somos bloqueados de acessar o recurso
+# Código de status 429: Too Many Requests
+for _ in range(15):
+    response = requests.get("https://www.cloudflare.com/rate-limit-test/")
+    print(response.status_code)
+
+# Uma boa prática é sempre colocarmos um uma pausa entre as requisições, ou lote delas, 
+# mesmo que o website, onde a informação está, não faça o bloqueio, assim evitamos tirar o site do ar.
+
+# Coloca uma pausa de 6 segundos a cada requisição
+# Obs: este site de exemplo tem um rate limit de 10 requisições por minuto
+for _ in range(15):
+    response = requests.get("https://www.cloudflare.com/rate-limit-test/")
+    print(response)
+    time.sleep(6)
