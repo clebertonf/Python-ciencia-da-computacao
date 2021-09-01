@@ -54,3 +54,22 @@ for _ in range(15):
     response = requests.get("https://www.cloudflare.com/rate-limit-test/")
     print(response)
     time.sleep(6)
+
+# Timeout
+# Ás vezes pedimos um recurso ao servidor, mas caso o nosso tráfego de rede esteja lento ou
+#  tenha um problema interno do servidor, nossa resposta pode demorar ou até mesmo ficar travada 
+# indefinidamente.
+
+try:
+    # recurso demora muito a responder
+    response = requests.get("http://httpbin.org/delay/10", timeout=2)
+except requests.ReadTimeout:
+    # vamos fazer uma nova requisição
+    response = requests.get("http://httpbin.org/delay/1", timeout=2)
+finally:
+    print(response.status_code)
+
+# Podemos definir um tempo limite (timeout) para que, após este tempo, possamos tomar 
+# alguma atitude como por exemplo, realizar uma nova tentativa.
+# Este tempo limite normalmente é definido através de experimentações e análise do tempo 
+# de resposta normal de uma requisição.
